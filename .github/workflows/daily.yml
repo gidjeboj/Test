@@ -1,5 +1,3 @@
-yaml
-
 name: Daily Build and Publish
 
 'on':
