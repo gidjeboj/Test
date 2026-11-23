@@ -25,7 +25,7 @@ jobs:
           python-version: '3.12'
           
       - name: Install dependencies
-        run: pip install Jinja2
+        run: pip install Jinja2 httpx
 
       - name: Run build.py
         run: python build.py
