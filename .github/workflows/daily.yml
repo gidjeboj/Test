@@ -2,12 +2,10 @@ yaml
 
 name: Daily Build and Publish
 
-on:
+'on':
   schedule:
-    # Kör varje dag kl 04:00 svensk tid på vintern
     - cron: '0 3 * * *'
 
-  # Gör det möjligt att starta manuellt
   workflow_dispatch:
 
 permissions:
@@ -20,31 +18,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Hämta dina filer från repository
       - name: Get repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
-      # Installera Python
       - name: Install Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      # Kör ditt befintliga Python-script
       - name: Run build.py
         run: python build.py
 
-      # Förbered GitHub Pages
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      # Ladda upp innehållet i docs
       - name: Upload docs
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./docs
 
-      # Publicera till GitHub Pages
       - name: Publish to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
