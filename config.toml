@@ -5,5 +5,5 @@ host = "orebro.skola24.se"
 unit_guid = "MmQyZmEyMjctYmJlNi1mZmE4LTkzMDctZDIzNDU0Njc2ZjI5"
 class_name = "4B"
 [skolmaten]
-enabled = true
+enabled = "true"
 school = "mosjo-skola"
